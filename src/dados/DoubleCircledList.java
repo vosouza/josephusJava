@@ -41,6 +41,15 @@ public class DoubleCircledList {
 		return aux1.getContent();
 	}
 	
+	public void setContent(int pos, Object obj) {
+		Node aux = this.head;
+		
+		for(int i=pos;i>0;i--) {
+			aux = aux.getNext();
+		}
+		aux.setContent(obj);
+	}
+	
 	public void excludeNode(int num) {
 		if(length == 1) {
 			head = null;
