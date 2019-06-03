@@ -39,10 +39,16 @@ public class Josephus {
 		
 	}
 	
+	/*
+	 *Devolve um array de inteiro com o tamanho total de soldados 
+	 * em cada celula 
+	 * 1-para vivo
+	 * 0-para morto 
+	 */
 	public int[] getSoldiersAlive() {
 		int[] sol = new int[this.totalSoldiers];
-		for(int i=1;i<this.totalSoldiers;i++) {
-			if( soldiers.getContent(i) == null ) {
+		for(int i=0;i<this.totalSoldiers;i++) {				//inicializa em zero por causa da matriz
+			if( soldiers.getContent(i+1) == null ) { 		//adiciona 1 por causa da logica
 				sol[i] = 0;
 			}else {
 				sol[i] = 1;
