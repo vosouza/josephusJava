@@ -5,6 +5,7 @@ public class Josephus {
 	private int totalSoldiers;
 	private int step, round;
 	private DoubleCircledList soldiers;
+	private Object winner;
 	
 /*
  * @param total soldiers, steps to kill the soldiers
@@ -15,6 +16,7 @@ public class Josephus {
 		this.totalSoldiers = total;
 		this.step = step;
 		this.round = 1;
+		this.winner = null;
 		
 		soldiers = new DoubleCircledList();
 		for(int i=1; i <= totalSoldiers; i++) {
@@ -22,21 +24,24 @@ public class Josephus {
 		}
 	}
 	
+	/*
+	 *Faz uma iteração para tirar 1 soldado do estrutura de dados
+	 * soldado morto tem o conteudo null
+	 */
 	public void playRound() {
-		int pos;
-		pos = step*round;
-		
-		if(pos > totalSoldiers) {
-			round = 1;
-		}else {
-			round++;
-		}
+		int pos = step*round;
 		
 		while((soldiers.getContent(pos)) == null) {
 			pos++;
 		}
+		
+		if(round == totalSoldiers){
+			this.winner = soldiers.getContent(pos);
+		}
+		
 		soldiers.setContent(pos, null);
 		
+		round++;
 	}
 	
 	/*
@@ -56,6 +61,10 @@ public class Josephus {
 		}
 		return sol;
 		
+	}
+
+	public Object getWinner() {
+		return winner;
 	}
 	
 }
