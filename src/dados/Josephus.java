@@ -25,7 +25,7 @@ public class Josephus {
 	}
 	
 	/*
-	 *Faz uma iteração para tirar 1 soldado do estrutura de dados
+	 *Faz uma iteraÃ§Ã£o para tirar 1 soldado do estrutura de dados
 	 * soldado morto tem o conteudo null
 	 */
 	public void playRound() {
@@ -65,6 +65,11 @@ public class Josephus {
 
 	public Object getWinner() {
 		return winner;
+	}
+
+	public int getQuantidade() {
+		// TODO Auto-generated method stub
+		return totalSoldiers;
 	}
 	
 }
