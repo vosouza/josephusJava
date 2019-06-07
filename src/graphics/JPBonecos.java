@@ -1,4 +1,4 @@
-package graphics;
+package graphics2;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -47,6 +47,15 @@ public class JPBonecos extends JPanel {
 
 			// Adiciona o label para o painel de individuos
 			painelIndividuos.add(individuos[i], 0);
+		}
+	}
+	
+	public void adicionarIndividosComGrifo(int qtd, int[] grifo){		
+		for (int i =  (qtd - 1); i >= 0; i--) {
+			if(grifo[i] == 0){
+				individuos[i].setBackground(Color.RED);
+			}
+			
 		}
 	}
 }
