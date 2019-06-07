@@ -1,10 +1,12 @@
-package graphics;
+package graphics2;
 
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+
+import dados.Josephus;
 
 @SuppressWarnings("serial")
 
@@ -16,6 +18,12 @@ public class FramePrincipal extends JFrame implements ActionListener {
 	//Paineis parelelos
 	JPBonecos bonecos = null;
 	JPBotoes btnpainel = null;
+	
+	//Classe responsavel pela animação do negocio
+	Animacao game;
+	
+	//responsavel pela regra do jogo
+	Josephus regras;
 	
 	public FramePrincipal(){
 		
@@ -30,7 +38,7 @@ public class FramePrincipal extends JFrame implements ActionListener {
 	}
 	
 	public void iniciarJanela(){
-		//bonecos.adicionarLabelsNoPainelIndividuos(10);
+		bonecos.adicionarLabelsNoPainelIndividuos(10);
 		
 		painelPrincipal.add ("Center", bonecos.getPainelIndividuos());
 		painelPrincipal.add ("South", btnpainel.getPainelComandos());
@@ -49,9 +57,10 @@ public class FramePrincipal extends JFrame implements ActionListener {
 			passo = btnpainel.getTxtPasso();
 			
 			if(qtd>0 && passo>0) {
-				System.out.print("xxxxx");
-			}else {
-				System.out.print("ccccc");
+				regras =  new Josephus(qtd,passo);
+				game = new Animacao(regras,bonecos);
+				game.run();
+				
 			}
 		}
 	}
