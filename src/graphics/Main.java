@@ -25,6 +25,10 @@ public class Main {
 		System.out.println(Arrays.toString(teste.getSoldiersAlive()));
 		teste.playRound();
 		System.out.println(Arrays.toString(teste.getSoldiersAlive()));
+		teste.playRound();
+		System.out.println(Arrays.toString(teste.getSoldiersAlive()));
+		teste.playRound();
+		System.out.println(Arrays.toString(teste.getSoldiersAlive()));
 
 	}
 	

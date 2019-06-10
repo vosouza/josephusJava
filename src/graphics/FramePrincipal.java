@@ -1,9 +1,8 @@
-package graphics2;
+package graphics;
 
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JFrame;
 
 import dados.Josephus;
@@ -57,9 +56,19 @@ public class FramePrincipal extends JFrame implements ActionListener {
 			passo = btnpainel.getTxtPasso();
 			
 			if(qtd>0 && passo>0) {
-				regras =  new Josephus(qtd,passo);
-				game = new Animacao(regras,bonecos);
-				game.run();
+				
+				if(regras != null) {
+					btnpainel.txtQuantidade.setEditable(false);
+					regras.playRound();
+				}else {
+					regras =  new Josephus(qtd,passo);
+				}
+				bonecos.adicionarIndividosComGrifo(qtd,regras.getSoldiersAlive());;
+				
+				//game = new Animacao(regras,bonecos);
+				//game.start();
+				
+				pack();	
 				
 			}
 		}

@@ -1,4 +1,4 @@
-package graphics2;
+package graphics;
 
 import dados.Josephus;
 
@@ -26,7 +26,10 @@ public class Animacao extends Thread {
 		// TESTE
 		int qtd = regra.getQuantidade();
 		for (int i = 0; i < qtd; i++) {
+			//System.out.println(Arrays.toString(regra.getSoldiersAlive()));
+			//painel.adicionarLabelsNoPainelIndividuos(qtd);
 			painel.adicionarIndividosComGrifo(qtd,regra.getSoldiersAlive());
+			painel.repaint();
 			regra.playRound();
 			
 			try {

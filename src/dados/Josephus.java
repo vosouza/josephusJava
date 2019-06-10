@@ -29,7 +29,8 @@ public class Josephus {
 	 * soldado morto tem o conteudo null
 	 */
 	public void playRound() {
-		int pos = step*round;
+		int pos = step*round-1;
+		
 		
 		while((soldiers.getContent(pos)) == null) {
 			pos++;
