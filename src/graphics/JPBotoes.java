@@ -38,7 +38,7 @@ public class JPBotoes extends JPanel{
 		txtPasso = new JTextField();
 		txtPasso.setVisible(true);
 		
-		jlbIndividuosRestante = new JLabel("Individuo executado: ");
+		jlbIndividuosRestante = new JLabel("Vencedor: ");
 		jlbIndividuosRestante.setVisible(false);
 
 		jlbIndividuoRestanteValor = new JLabel("  ");
@@ -52,7 +52,7 @@ public class JPBotoes extends JPanel{
 		txtQuantidade.setSize(100, 100);
 		txtQuantidade.setEnabled(true);
 		
-		jbExecutar = new JButton ("Executar");
+		jbExecutar = new JButton ("Set");
 		jbExecutar.setToolTipText("Executar regras do Josephus");
 		jbExecutar.addActionListener(fp);
 
@@ -65,10 +65,10 @@ public class JPBotoes extends JPanel{
 		jbSair.setToolTipText("Termina programa");
 		jbSair.addActionListener(fp);
 
-		jbConfig = new JButton ("Config");
+		jbConfig = new JButton ("Next");
 		jbConfig.setToolTipText("Ativa configuracoes");
 		jbConfig.addActionListener(fp);
-		jbConfig.setEnabled(true);
+		jbConfig.setEnabled(false);
 
 		
 		// adiciona os botoes
