@@ -44,7 +44,7 @@ public class DoubleCircledList {
 	public void setContent(int pos, Object obj) {
 		Node aux = this.head;
 		
-		for(int i=pos;i>0;i--) {
+		for(int i=1;i<pos;i++) {
 			aux = aux.getNext();
 		}
 		aux.setContent(obj);
